@@ -838,7 +838,12 @@ select empno, ename, mgr, deptno
      , row_number() over (partition by deptno, mgr order by empno) as RN
 from emp;
 
-
+select A.deptno, A.dname
+     , NVL ((select 'Y'
+             from emp x
+             where x.deptno = a.deptno
+             and rownum = 1), 'N') as YN
+from dept A;
 
 
 
