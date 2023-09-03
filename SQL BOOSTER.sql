@@ -814,6 +814,32 @@ where deptno in (select deptno
 select * from emp;
 select empno, rownum from emp;
 
+select empno, ename, mgr, sys_connect_by_path(ename, '>')
+from emp
+start with ename = 'SCOTT'
+connect by empno = prior mgr;
+
+select substr (max (sys_connect_by_path (ename, '>')), 2) as path
+from emp
+start with ename = 'SCOTT'
+connect by empno = prior mgr;
+
+select rowid
+     , rownum
+     , ename
+     , mgr
+     , empno
+     , row_number() over (order by ename) as RN
+from emp;
+
+select * from emp;
+
+select empno, ename, mgr, deptno
+     , row_number() over (partition by deptno, mgr order by empno) as RN
+from emp;
+
+
+
 
 
 
