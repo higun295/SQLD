@@ -71,12 +71,52 @@ FROM t1 a
     LEFT OUTER JOIN t2 b ON b.c1 = a.c1
 WHERE a.c1 > 1 
 ORDER BY a.c1;
-
 -- 바로 위의 SQL에서 일반조건을 ON절로 바꾸면
 SELECT a.c1 AS a, b.c1 AS b
 FROM t1 a
     LEFT OUTER JOIN t2 b ON a.c1 > 1 AND b.c1 = a.c1
 ORDER BY a.c1;
+
+
+
+SELECT a.c1 AS a, b.c1 AS b
+FROM t1 a, t2 b
+WHERE b.c1(+) = a.c1 AND b.c1 > 1
+ORDER BY a.c1;
+
+select a.c1 as a, b.c1 as b
+from t1 a
+    join t2 b on a.c1 = b.c1
+where b.c1 > 1
+order by a.c1;
+
+select *
+from t1 a left outer join t2 b on a.c1 = b.c1
+where b.c1 > 1 order by a.c1;
+
+SELECT a.c1 AS a, b.c1 AS b
+FROM t1 a, t2 b
+WHERE b.c1(+) = a.c1 AND b.c1(+) > 1
+ORDER BY a.c1;
+
+SELECT a.c1 AS a, b.c1 AS b
+FROM t1 a, t2 b
+WHERE b.c1(+) = a.c1 AND b.c1(+) IN (1, 4)
+ORDER BY a.c1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

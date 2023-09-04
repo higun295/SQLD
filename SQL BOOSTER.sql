@@ -845,6 +845,10 @@ select A.deptno, A.dname
              and rownum = 1), 'N') as YN
 from dept A;
 
+select * from emp;
+select * from dept;
+
+
 
 
 
