@@ -857,7 +857,7 @@ group by deptno
 order by deptno
 
 select concat(concat(null, 'BC'), 'E') from dual;
-select lpad('BCD', 'A', 3) from dual;
+select lpad('BCD', 3, 'A') from dual;
 
 
 
