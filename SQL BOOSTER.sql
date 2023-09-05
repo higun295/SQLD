@@ -848,7 +848,16 @@ from dept A;
 select * from emp;
 select * from dept;
 
+select deptno
+     , round(avg(sal), 2) as AVG_SAL
+     , sum(comm) as SUM_COMM
+     , count(*) over (order by avg(sal) rows between 1 preceding and 1 following) count
+from emp
+group by deptno
+order by deptno
 
+select concat(concat(null, 'BC'), 'E') from dual;
+select lpad('BCD', 'A', 3) from dual;
 
 
 
