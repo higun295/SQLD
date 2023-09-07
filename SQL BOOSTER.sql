@@ -859,7 +859,10 @@ order by deptno
 select concat(concat(null, 'BC'), 'E') from dual;
 select lpad('BCD', 3, 'A') from dual;
 
-
+select team_id
+     , nvl(sum(case when position = 'FW' then 1 end), 0) as FW
+from player
+group by team_id;
 
 
 
