@@ -871,7 +871,7 @@ where A.team_id = B.team_id;
 
 select * from emp;
 select sum(sal) from emp having avg(sal) > 3000;
-
+select avg(count(*)) from emp group by deptno;
 
 
 
