@@ -864,6 +864,14 @@ select team_id
 from player
 group by team_id;
 
+select * from player;
+select *
+from player A, (select * from team B where B.team_id = A.team_id) B
+where A.team_id = B.team_id;
+
+select * from emp;
+select sum(sal) from emp having avg(sal) > 3000;
+
 
 
 
