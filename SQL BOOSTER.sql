@@ -991,3 +991,5 @@ select avg(count(*)) from emp group by deptno;
 
 
 
+
+
