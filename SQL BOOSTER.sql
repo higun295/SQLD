@@ -873,6 +873,12 @@ select * from emp;
 select sum(sal) from emp having avg(sal) > 3000;
 select avg(count(*)) from emp group by deptno;
 
+select * from emp;
+select * from dept;
+
+select *
+from (select deptno from emp intersect select deptno from dept);
+
 
 
 
