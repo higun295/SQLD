@@ -879,9 +879,12 @@ select * from dept;
 select *
 from (select deptno from emp intersect select deptno from dept);
 
+select * 
+from player A
+where A.team_id in (select X.team_id from team X where X.team_id = 'K02');
 
-
-
+desc team;
+desc player;
 
 
 
